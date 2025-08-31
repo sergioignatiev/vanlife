@@ -1,9 +1,8 @@
 <template>
-  <div class="flex flex-col w-full sm:w-[230px]  max-w-sm overflow-hidden">
+  <RouterLink :to="id" class="no-underline text-black flex flex-col  basis-[100%] sm:basis-[40%]   md:max-w-[229px] overflow-hidden">
     <img :src="imageUrl" :alt="name" class="w-full h-auto rounded-md"
     
-      width="230" 
-       height="230" 
+     
     loading="lazy">
     
     <div class="flex justify-between items-start mt-2">
@@ -15,31 +14,18 @@
       </div>
       
     </div>
-    <button :class="type" class=" border-none rounded-md capitalize h-[34px]  text-white text-[1rem] font-semibold w-[37%] min-w[86px]">{{ type }}</button>
-  </div>
+   <TheButton :type="type"/>
+  </RouterLink>
 </template>
 
 <script lang="ts" setup>
-interface Card { 
-  id: string, 
-  name: string, 
-  price: number, 
-  description: string, 
-  imageUrl: string, 
-  type: string,
-  hostId: string 
-}
-defineProps<Card>()
+import type { Van } from '@/interfaces/van';
+import TheButton from './TheButton.vue';
+import { RouterLink } from 'vue-router';
+
+defineProps<Van>()
 </script>
 
 <style scoped>
-.simple{
-background-color:#E17653 ;
-}
-.rugged{
-background-color: #115E59;
-}
-.luxury{
-background-color: #161616;
-}
+
 </style>

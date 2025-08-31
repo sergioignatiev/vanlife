@@ -1,2 +1,15 @@
 @import './base.css';
 
+.my-padding{
+    padding-left:200px;
+    padding-right:200px;
+    padding-bottom: 100px;
+}
+@media (max-width:1000px) {
+    .my-padding{
+    padding-left:27px;
+    padding-right:27px;
+    padding-bottom: 100px;
+}
+    
+}

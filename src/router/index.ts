@@ -8,7 +8,10 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+     
     },
+
+
     {
       path: '/about',
       name: 'about',
@@ -17,7 +20,18 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
+ {
+      path: '/:id', // теперь id отдельным маршрутом
+      name: 'van-page',
+      component: () => import('../views/TheVanView.vue')
+    },
+
+
   ],
+    scrollBehavior(to, from, savedPosition) {
+    // Всегда скроллить наверх при переходе
+    return { top: 0 }
+  }
 })
 
 export default router
