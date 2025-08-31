@@ -1,15 +1,25 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="flex flex-col gap-[48px]">
+    
+    <img src="/src/assets/images/about.png" alt="abt">
+
+    <section class="my-padding flex flex-col gap-[33px]">
+      <h1 class="text-[32px] font-bold">Don’t squeeze in a sedan when you could relax in a van.</h1>
+<p>
+  Our mission is to enliven your road trip with the perfect travel van rental. Our vans are recertified before each trip to ensure your travel plans can go off without a hitch.
+(Hitch costs extra 😉)
+</p>
+<p>Our team is full of vanlife enthusiasts who know firsthand the magic of touring the world on 4 wheels.</p>
+
+</section>
+<section class="bg-[#FFCC8D] my-padding py-[32px]">
+  <h2 class="text-[24px] font-bold">Your destination is waiting.</h2>
+<h2 class="text-[24px] font-extrabold">Your van is ready.</h2>
+</section>
+    
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+
 </style>
