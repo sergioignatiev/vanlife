@@ -12,14 +12,22 @@
 <p>Our team is full of vanlife enthusiasts who know firsthand the magic of touring the world on 4 wheels.</p>
 
 </section>
-<section class="bg-[#FFCC8D] my-padding py-[32px]">
+<section class="bg-[#FFCC8D] my-padding py-[32px] flex flex-col gap-[25px]">
+  <div class="">
   <h2 class="text-[24px] font-bold">Your destination is waiting.</h2>
-<h2 class="text-[24px] font-extrabold">Your van is ready.</h2>
+<h2 class="text-[24px] font-bold">Your van is ready.</h2>
+</div>  
+<router-link to="/">
+      <button class="min-w-[179px] font-bold h-[49px] border-none text-white bg-black rounded-[10px]">Explore our vans</button>
+    </router-link>
 </section>
-    
+  
   </div>
 </template>
 
-<style>
+<style scoped>
+p{
+  font-weight: 500;
+}
 
 </style>
