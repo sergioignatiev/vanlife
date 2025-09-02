@@ -18,7 +18,7 @@
       </div>
 
       <button
-        class="bg-transparent border-none text-un text-[#4d4d40] underline underline-offset-4"
+        class="bg-transparent mt-6 sm:mt-0 border-none text-un text-[#4d4d40] underline underline-offset-4"
         @click="selectedType = null"
       >
         Clear Filters
