@@ -17,7 +17,7 @@
   <h2 class="text-[24px] font-bold">Your destination is waiting.</h2>
 <h2 class="text-[24px] font-bold">Your van is ready.</h2>
 </div>  
-<router-link to="/">
+<router-link :to="{name:'home'}">
       <button class="min-w-[179px] font-bold h-[49px] border-none text-white bg-black rounded-[10px]">Explore our vans</button>
     </router-link>
 </section>

@@ -1,6 +1,6 @@
 <template>
-  <RouterLink :to="id" class="no-underline text-black flex flex-col  basis-[100%] sm:basis-[40%]   md:max-w-[229px] overflow-hidden">
-    <img :src="imageUrl" :alt="name" class="w-full h-auto rounded-md"
+  <RouterLink :to="id" class="no-underline text-black flex flex-col    overflow-hidden">
+    <img :src="imageUrl" :alt="name" class="w-full h-auto rounded-md hover:scale-95 duration-300 hover:shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
     
      
     loading="lazy">

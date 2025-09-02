@@ -18,14 +18,14 @@
       </div>
 
       <button
-        class="bg-transparent border-none text-un text-[#4d4d40] underline"
+        class="bg-transparent border-none text-un text-[#4d4d40] underline underline-offset-4"
         @click="selectedType = null"
       >
         Clear Filters
       </button>
     </section>
 
-    <div class="flex flex-wrap justify-center gap-[35.88px]">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-5">
       <TheCard
         v-for="card in filteredArray"
         :key="card.id"

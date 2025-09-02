@@ -9,8 +9,8 @@
 </router-link>
 
       <ul class="flex list-none gap-[13px]">
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/">Vans</router-link></li>
+        <li><router-link class="underline-offset-4" :to="{name:'about'}">About</router-link></li>
+        <li><router-link class="underline-offset-4" :to="{name:'home'}">Vans</router-link></li>
         
       </ul>
     </nav>

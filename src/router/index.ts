@@ -8,13 +8,14 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-     
+     meta: { title: 'All Vans' }
     },
 
 
     {
       path: '/about',
       name: 'about',
+      meta:{title:"About"},
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -23,7 +24,8 @@ const router = createRouter({
  {
       path: '/:id', // теперь id отдельным маршрутом
       name: 'van-page',
-      component: () => import('../views/TheVanView.vue')
+      component: () => import('../views/TheVanView.vue'),
+        props: true
     },
 
 
@@ -32,6 +34,11 @@ const router = createRouter({
     // Всегда скроллить наверх при переходе
     return { top: 0 }
   }
+  ,
+  
+})
+router.afterEach((to) => {
+  document.title = (to.meta.title as string) || 'Default Title'
 })
 
 export default router
