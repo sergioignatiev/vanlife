@@ -1,6 +1,7 @@
 <template>
   <div>
-    <TheNavbar/>
+    <router-view name="navbar"/>
+    
     <main class="min-h-[100vh]">
     <router-view/>
     </main>
@@ -11,7 +12,7 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router';
 import TheFooter from './components/TheFooter.vue';
-import TheNavbar from './components/TheNavbar.vue';
+
 </script>
 
 <style>

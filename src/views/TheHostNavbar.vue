@@ -1,5 +1,5 @@
 <template>
- <nav class="flex justify-between px-[26px] py-[36px]">
+ <nav class="flex justify-between my-padding py-[36px] h-[116px]">
   <router-link to="/" class="font-extrabold text-[26px]">
    
     <svg width="124" height="20" viewBox="0 0 124 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,6 +9,7 @@
 </router-link>
 
       <ul class="flex list-none gap-[13px]">
+        <li><router-link class="underline-offset-4" :to="{name:'dashboard'}">Host</router-link></li>
         <li><router-link class="underline-offset-4" :to="{name:'about'}">About</router-link></li>
         <li><router-link class="underline-offset-4" :to="{name:'home'}">Vans</router-link></li>
         

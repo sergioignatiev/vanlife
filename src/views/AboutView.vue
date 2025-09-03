@@ -1,7 +1,8 @@
 <template>
+  
   <div class="flex flex-col gap-[48px]">
     
-    <img src="/src/assets/images/about.png" alt="abt">
+    <img :src="aboutIcon" alt="abt">
 
     <section class="my-padding flex flex-col gap-[33px]">
       <h1 class="text-[32px] font-bold">Don’t squeeze in a sedan when you could relax in a van.</h1>
@@ -24,7 +25,21 @@
   
   </div>
 </template>
+<script lang="ts" setup>
+import { useHead } from '@vueuse/head';
+import aboutIcon from '@/assets/images/about.png'
+useHead({
+  title: 'About Page',
+  link: [
+    { rel: 'icon', href:'/images/about.png',type:'image/png'}
+  ],
+  meta: [
+    { name: 'description', content: 'This is the about page' }
+  ]
+})
 
+
+</script>
 <style scoped>
 p{
   font-weight: 500;
