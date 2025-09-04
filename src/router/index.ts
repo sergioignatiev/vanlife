@@ -25,6 +25,11 @@ const routes = [
     meta: { title: 'About', favicon: '/images/about.png' },
   },
   {
+  path: '/:pathMatch(.*)*',
+  name: 'not-found',
+  component: () => import('../views/NotFound.vue')
+},
+  {
     path: '/:id',
     name: 'van-page',
     components: {
