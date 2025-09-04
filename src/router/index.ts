@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { useCounterStore } from '@/stores/counter'
 
-// Импорт обычного навбара
 const DefaultNavbar = () => import('../views/TheNavbar.vue')
 const HostNavbar = () => import('../views/TheHostNavbar.vue')
 
@@ -24,11 +24,6 @@ const routes = [
     },
     meta: { title: 'About', favicon: '/images/about.png' },
   },
-  {
-  path: '/:pathMatch(.*)*',
-  name: 'not-found',
-  component: () => import('../views/NotFound.vue')
-},
   {
     path: '/:id',
     name: 'van-page',
@@ -73,30 +68,29 @@ const routes = [
         path: ':id',
         name: 'host-vans-id',
         component: () => import('../views/host/TheHostVanIdView.vue'),
-        props:true,
+        props: true,
         children: [
           {
             path: 'details',
             name: 'van-details',
             component: () => import('../views/host/TheVanDetailsView.vue'),
-            props:true,
+            props: true,
             meta: { noScroll: true },
           },
           {
             path: 'pricing',
             name: 'van-pricing',
             component: () => import('../views/host/TheVanPricingView.vue'),
-            props:true,
+            props: true,
             meta: { noScroll: true },
           },
-{
+          {
             path: 'photos',
             name: 'van-photos',
             component: () => import('../views/host/TheVanPhotosView.vue'),
-            props:true,
+            props: true,
             meta: { noScroll: true },
           },
-
         ],
       },
       {
@@ -106,23 +100,39 @@ const routes = [
       },
     ],
   },
+  
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    components: {default:() => import('../views/NotFound.vue'),
+      navbar:DefaultNavbar
+    },
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (to.meta.noScroll) {
-      // полностью отключаем авто-скролл
-      return false
-    }
-
-    if (savedPosition) {
-      return savedPosition
-    }
-
+    if (to.meta.noScroll) return false
+    if (savedPosition) return savedPosition
     return { left: 0, top: 0 }
   },
 })
+
+// глобальная проверка id
+router.beforeEach((to, from, next) => {
+  const store = useCounterStore()
+
+  if (to.params.id) {
+    const vanExists = store.data.find(v => v.id === to.params.id)
+    if (!vanExists) {
+      return next({ name: 'not-found', replace: true })
+    }
+  }
+
+  next()
+})
+
 
 export default router

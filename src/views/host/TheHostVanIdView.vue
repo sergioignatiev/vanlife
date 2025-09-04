@@ -2,22 +2,23 @@
   <div>
     <!-- ссылка назад ко всем фургонам -->
     <router-link class="text-black underline underline-offset-4 " :to="{ name: 'vans' }">
-     &#8592; Back to all vans 
+      &#8592; Back to all vans 
     </router-link>
 
-    <div class="bg-white p-[25px] mt-[60px] rounded-md">
+    <!-- если фургон найден -->
+    <div v-if="vansList" class="bg-white p-[25px] mt-[60px] rounded-md">
       <section class="flex items-center gap-[20px]">
         <img
           width="160"
           class="rounded-md"
-          :src="vansList?.imageUrl"
-          :alt="vansList?.name || 'My Van'"
+          :src="vansList.imageUrl"
+          :alt="vansList.name"
         />
         <div class="flex flex-col gap-4">
-          <TheButton :type="vansList?.type" />
-          <h2>{{ vansList?.name || 'wait' }}</h2>
+          <TheButton :type="vansList.type" />
+          <h2>{{ vansList.name }}</h2>
           <p>
-            <span class="font-bold">${{ vansList?.price }}</span>/day
+            <span class="font-bold">${{ vansList.price }}</span>/day
           </p>
         </div>
       </section>
@@ -34,9 +35,15 @@
           Photos
         </router-link>
       </nav>
+
       <div class="py-[27px]">
-<router-view/>
-     </div>
+        <router-view />
+      </div>
+    </div>
+
+    <!-- если id некорректный -->
+    <div v-else class="bg-white p-[25px] mt-[60px] rounded-md text-red-600 font-bold text-lg">
+      🚨 Фургона с таким id ({{ id }}) не существует
     </div>
   </div>
 </template>
@@ -51,26 +58,21 @@ import TheButton from '@/components/TheButton.vue'
 const store = useCounterStore()
 const { data } = storeToRefs(store)
 
-// Берём id из текущего роута
 const route = useRoute()
 const id = computed(() => route.params.id as string)
 
-// Ищем нужный ван по id
-const vansList = computed(() => {
-  return data.value.find(van => van.id == id.value)
-})
+const vansList = computed(() => data.value.find(van => van.id === id.value))
 </script>
 
-
 <style scoped>
-nav>a{
-    color:#4D4D4D;
-    text-decoration: none;
+nav > a {
+  color: #4d4d4d;
+  text-decoration: none;
 }
-.router-link-exact-active{
-    color:black;
-    text-decoration: underline;
-    font-weight: 600;
-    text-underline-offset: 4px;
+.router-link-exact-active {
+  color: black;
+  text-decoration: underline;
+  font-weight: 600;
+  text-underline-offset: 4px;
 }
 </style>

@@ -38,10 +38,7 @@ const { data } = storeToRefs(store);
 // computed возвращает объект типа Van | undefined
 const van = computed<Van | undefined>(() => data.value.find(x => x.id === id));
 
- watchEffect(() => {
-  if (van.value === undefined) {
-    router.replace('/about');
-  } });
+
 useHead(() => ({
   title: van.value?.name || 'Van Not Found',
   link: [
