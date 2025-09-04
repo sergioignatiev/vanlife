@@ -1,6 +1,6 @@
 <template>
   <div>
- <img :src="item?.imageUrl" :alt="item?.name||'van'">
+ <img width="104" class="rounded-md" :src="item?.imageUrl" :alt="item?.name||'van'" loading="lazy">
   </div>
 </template>
 

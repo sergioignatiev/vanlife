@@ -12,3 +12,6 @@ body{
 button{
   border:none;
 }
+.router-link-active{
+  color:red;
+}

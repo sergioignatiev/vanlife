@@ -44,8 +44,9 @@ const hostRoutes = reactive([
 <style scoped>
 .router-link-exact-active{
     text-decoration: underline;
-  
+  text-underline-offset: 4px;
     color:black;
+    font-weight: 600;
 }
 
 </style>

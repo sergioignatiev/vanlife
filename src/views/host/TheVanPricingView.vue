@@ -1,6 +1,6 @@
 <template>
 <div class="">
-    <h1>{{ item?.price }}</h1>
+    <div class="text-[24px]"><span class="font-semibold">${{ item?.price }}.00</span>/day</div>
 </div>
 
 </template>

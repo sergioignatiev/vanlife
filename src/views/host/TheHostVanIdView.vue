@@ -1,11 +1,11 @@
 <template>
   <div>
     <!-- ссылка назад ко всем фургонам -->
-    <router-link :to="{ name: 'vans' }">
-      back to all vans {{ id }}
+    <router-link class="text-black underline underline-offset-4 " :to="{ name: 'vans' }">
+     &#8592; Back to all vans 
     </router-link>
 
-    <div class="bg-white p-[25px] mt-[60px]">
+    <div class="bg-white p-[25px] mt-[60px] rounded-md">
       <section class="flex items-center gap-[20px]">
         <img
           width="160"
@@ -34,8 +34,9 @@
           Photos
         </router-link>
       </nav>
+      <div class="py-[27px]">
 <router-view/>
-     
+     </div>
     </div>
   </div>
 </template>
@@ -61,6 +62,15 @@ const vansList = computed(() => {
 </script>
 
 
-<style>
-
+<style scoped>
+nav>a{
+    color:#4D4D4D;
+    text-decoration: none;
+}
+.router-link-exact-active{
+    color:black;
+    text-decoration: underline;
+    font-weight: 600;
+    text-underline-offset: 4px;
+}
 </style>
