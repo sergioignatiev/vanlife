@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-padding">
     <!-- ссылка назад ко всем фургонам -->
     <router-link class="text-black underline underline-offset-4 " :to="{ name: 'vans' }">
       &#8592; Back to all vans 
@@ -7,16 +7,16 @@
 
     <!-- если фургон найден -->
     <div v-if="vansList" class="bg-white p-[25px] mt-[60px] rounded-md">
-      <section class="flex items-center gap-[20px]">
+      <section class="flex items-center gap-[20px] flex-col sm:flex-row">
         <img
-          width="160"
-          class="rounded-md"
+          width=""
+          class="rounded-md w-full sm:w-[160px]"
           :src="vansList.imageUrl"
           :alt="vansList.name"
         />
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 items-start w-full">
           <TheButton :type="vansList.type" />
-          <h2>{{ vansList.name }}</h2>
+          <h2 class="text-[22px] sm:text-[26px]">{{ vansList.name }}</h2>
           <p>
             <span class="font-bold">${{ vansList.price }}</span>/day
           </p>

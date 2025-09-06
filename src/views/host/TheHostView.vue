@@ -1,8 +1,8 @@
 <template>
-  <div class="my-padding">
+  <div class="">
   
-  <nav >
-<ul class="flex items-center h-[100px] gap-[28px] list-none">
+  <nav class="my-padding pb-[0]">
+<ul class="flex items-center h-[100px] gap-4 sm:gap-[28px] list-none">
     <li v-for="(route,index) in hostRoutes":key=index >
         <router-link :to="{name:route.name}"   
         class="capitalize text-[#4D4D4D] no-underline">

@@ -65,7 +65,7 @@ const filteredArray = computed(() => {
 useHead(()=>({
   title:title.value,
   link: [
-    { rel: 'icon', href: '/src/assets/images/main.png' }
+    { rel: 'icon', href: '/images/logo2.png' }
   ],
   meta: [
     { name: 'description', content: 'This is the main page' }

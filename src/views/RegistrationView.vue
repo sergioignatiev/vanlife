@@ -12,15 +12,20 @@
  placeholder="Password"
  />
   </div>
-<button class="bg-[#FF8C38] h-[48px] w-[100%] rounded-md text-white">Sign in</button>
+<button type="button" @click="registration" class="bg-[#FF8C38] h-[48px] w-[100%] rounded-md text-white">Sign in</button>
     </form>
 
-    <div class="text-center">Don’t have an account? <a href="#" class="font-bold no-underline text-[#FF8C38]">Create one now</a> </div>
+    <div class="text-center" >Don’t have an account? <a href="#" class="font-bold no-underline text-[#FF8C38]">Create one now</a> </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useHead } from '@vueuse/head';
+import { useRouter } from 'vue-router';
+const router=useRouter()
+function registration(){
+  router.push({ name: 'dashboard' })
+}
 useHead(()=>({
   title:"Registration",
   link: [
@@ -33,8 +38,5 @@ useHead(()=>({
 </script>
 
 <style scoped>
-h1{
-  font-weight: 800;
-}
 
 </style>
