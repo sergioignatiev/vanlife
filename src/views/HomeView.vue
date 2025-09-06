@@ -1,6 +1,6 @@
 <template>
   <div class="my-padding pb-[155px]">
-    <h1 class="font-700 text-[32px]">Explore our van options</h1>
+    <h1 class="font-700 text-[32px]">Explore our van options.</h1>
 
     <section
       class="flex flex-col sm:flex-row justify-between max-w-[500px] mb-[56px] mt-[27px]"
