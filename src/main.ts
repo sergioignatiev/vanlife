@@ -1,4 +1,4 @@
-import './assets/main.css'
+//import './assets/main.css'//
 import 'uno.css'           // если используешь UnoCSS
 import '@fontsource/inter/index.css';
 import { createApp } from 'vue'
