@@ -1,2 +1,87 @@
 @import './base.css';
 
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+
+   font-family: 'Inter', sans-serif;
+}
+body{
+  background-color: #fff7ed;
+}
+button{
+  border:none;
+}
+.router-link-active{
+  color:red;
+}
+.my-padding{
+   padding:0 10px 50px 10px;
+}
+@media (min-width:500px) {
+    .my-padding{
+        padding:0 26px 50px 26px;
+    }
+}
+
+@media (min-width:768px) {
+    .my-padding{
+        padding:0 34px 50px 34px;
+    }
+}
+@media (min-width:1024px) {
+    .my-padding{
+        padding:0 56px 50px 56px;
+    }
+}
+@media (min-width:1280px) {
+    .my-padding{
+        padding:0 94px 50px 94px;
+    }
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Глобальный шрифт для проекта */
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+}

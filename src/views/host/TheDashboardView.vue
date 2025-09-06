@@ -1,14 +1,17 @@
 <template>
   <div>
-<section aria-label="welcome" class="flex justify-between items-center bg-[#FFEAD0] my-padding py-[37px]">
-<div class="flex flex-col gap-3">
+<section aria-label="welcome" class="flex justify-between items-center bg-[#FFEAD0] my-padding py-[37px] ">
+
+<div class="flex flex-col gap-3 ">
   <h1 class="text-[22px] sm:text-[36px]">Welcome</h1>
   <div class="flex text-[13px] sm:text-[16px]">income <pre> </pre><span>
      <TheLastThirtyDays/>
   </span></div>
 <div class="font-extrabold text-[24px] sm:text-[38px]">$2,260</div>
 </div>
+
 <router-link class="no-underline text-[13px] sm:text-[16px]" :to="{name:'income'}">Details</router-link>
+
 </section>
 
 <section class="my-padding flex justify-between items-center py-[42px] bg-[#FFDDB2]" aria-label="reviews">
