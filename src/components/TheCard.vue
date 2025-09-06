@@ -1,9 +1,17 @@
 <template>
   <RouterLink :to="id" class="no-underline text-black flex flex-col    overflow-hidden">
-    <img :src="imageUrl" :alt="name" class="w-full h-auto rounded-md hover:scale-95 duration-300 hover:shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
-    
-     
-    loading="lazy">
+    <img 
+    height="480" 
+     :srcset="`
+    ${imageUrl}?w=320 320w,
+    ${imageUrl}?w=480 480w,
+    ${imageUrl}?w=720 720w
+  `"
+  sizes="(max-width: 480px) 100vw, 480px"
+    :src="imageUrl" 
+    :alt="name" 
+    class="w-full h-auto rounded-md hover:scale-95 duration-300 hover:shadow-[0_15px_25px_rgba(0,0,0,0.5)]"
+loading="lazy">
     
     <div class="flex justify-between items-start mt-2">
       <h2 class="text-xl font-bold">{{ name }}</h2>
