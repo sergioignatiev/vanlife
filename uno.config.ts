@@ -1,12 +1,17 @@
-import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss'
+import {
+  defineConfig,
+  presetUno,
+  presetAttributify,
+  presetIcons,
+} from 'unocss';
 
 export default defineConfig({
   presets: [
-    presetUno(),        // default utilities (like Tailwind)
-    presetAttributify(),// enables attribute-based usage (bg="red-500")
-    presetIcons(),      // use icons as classes
+    presetUno(), // default utilities (like Tailwind)
+    presetAttributify(), // enables attribute-based usage (bg="red-500")
+    presetIcons(), // use icons as classes
   ],
- theme: {
+  theme: {
     breakpoints: {
       sm: '500px',
       md: '768px',
@@ -14,5 +19,4 @@ export default defineConfig({
       xl: '1280px',
     },
   },
-
-})
+});

@@ -32,9 +32,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { Van } from '@/interfaces/van'
-import TheButton from './TheButton.vue'
-import { RouterLink } from 'vue-router'
+import type { Van } from '@/interfaces/van';
+import TheButton from './TheButton.vue';
+import { RouterLink } from 'vue-router';
 
-defineProps<Van>()
+defineProps<Van>();
 </script>

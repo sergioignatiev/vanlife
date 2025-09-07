@@ -1,22 +1,19 @@
 <template>
-  <button :class="type" class="
-    max-w-[130px] transform 
-    shadow-[0_15px_25px_rgba(0,0,0,0.5)]
-    border-none rounded-md capitalize 
-    h-[34px] text-white text-[1rem] font-semibold 
-    w-[37%] min-w-[86px]
-  ">
+  <button
+    :class="type"
+    class="max-w-[130px] transform shadow-[0_15px_25px_rgba(0,0,0,0.5)] border-none rounded-md capitalize h-[34px] text-white text-[1rem] font-semibold w-[37%] min-w-[86px]"
+  >
     {{ type }}
   </button>
 </template>
 
 <script lang="ts" setup>
-defineProps({ type: String })
+defineProps({ type: String });
 </script>
 
 <style scoped>
 .simple {
-  background-color: #E17653;
+  background-color: #e17653;
   transition: all 0.2s ease;
 }
 .simple:hover {
@@ -30,7 +27,7 @@ defineProps({ type: String })
 }
 
 .rugged {
-  background-color: #115E59;
+  background-color: #115e59;
   transition: all 0.2s ease;
 }
 .rugged:hover {

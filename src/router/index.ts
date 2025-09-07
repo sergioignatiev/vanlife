@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import { useCounterStore } from '@/stores/counter'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import { useCounterStore } from '@/stores/counter';
 
-const DefaultNavbar = () => import('../views/TheNavbar.vue')
-const HostNavbar = () => import('../views/TheHostNavbar.vue')
+const DefaultNavbar = () => import('../views/TheNavbar.vue');
+const HostNavbar = () => import('../views/TheHostNavbar.vue');
 
 const routes = [
   {
@@ -100,39 +100,39 @@ const routes = [
       },
     ],
   },
-  
+
   {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
-    components: {default:() => import('../views/NotFound.vue'),
-      navbar:DefaultNavbar
+    components: {
+      default: () => import('../views/NotFound.vue'),
+      navbar: DefaultNavbar,
     },
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (to.meta.noScroll) return false
-    if (savedPosition) return savedPosition
-    return { left: 0, top: 0 }
+    if (to.meta.noScroll) return false;
+    if (savedPosition) return savedPosition;
+    return { left: 0, top: 0 };
   },
-})
+});
 
 // глобальная проверка id
 router.beforeEach((to, from, next) => {
-  const store = useCounterStore()
+  const store = useCounterStore();
 
   if (to.params.id) {
-    const vanExists = store.data.find(v => v.id === to.params.id)
+    const vanExists = store.data.find((v) => v.id === to.params.id);
     if (!vanExists) {
-      return next({ name: 'not-found', replace: true })
+      return next({ name: 'not-found', replace: true });
     }
   }
 
-  next()
-})
+  next();
+});
 
-
-export default router
+export default router;

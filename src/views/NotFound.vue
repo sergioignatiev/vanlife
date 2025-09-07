@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-screen text-center px-4">
+  <div
+    class="flex flex-col items-center justify-center h-screen text-center px-4"
+  >
     <h1 class="text-2xl font-bold text-[#1c1c1c]">
       Sorry, the page you were looking for was not found.
     </h1>
@@ -14,5 +16,5 @@
 </template>
 
 <script setup lang="ts">
-// ничего не нужно, всё через <router-link>
+
 </script>

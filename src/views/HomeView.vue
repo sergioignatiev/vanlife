@@ -25,12 +25,10 @@
       </button>
     </section>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-5">
-      <TheCard
-        v-for="card in filteredArray"
-        :key="card.id"
-        v-bind="card"
-      />
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+    >
+      <TheCard v-for="card in filteredArray" :key="card.id" v-bind="card" />
     </div>
   </div>
 </template>
@@ -42,37 +40,31 @@ import { useCounterStore } from '@/stores/counter';
 import { storeToRefs } from 'pinia';
 import TheCard from '@/components/TheCard.vue';
 import { useHead } from '@vueuse/head';
-const title =ref<string>('All Vans')
+const title = ref<string>('All Vans');
 const store = useCounterStore();
 const { data, findTypesOfVan } = storeToRefs(store);
 
 const selectedType = ref<string | null>(null);
 
-function changeType(x:string){
-selectedType.value=x;
-title.value=x
+function changeType(x: string) {
+  selectedType.value = x;
+  title.value = x;
 }
-function showAll(){
-  selectedType.value=null;
-  title.value="All Vans"
+function showAll() {
+  selectedType.value = null;
+  title.value = 'All Vans';
 }
 
 const filteredArray = computed(() => {
   if (!selectedType.value) return data.value;
-  return data.value.filter(card => card.type === selectedType.value);
+  return data.value.filter((card) => card.type === selectedType.value);
 });
 
-useHead(()=>({
-  title:title.value,
-  link: [
-    { rel: 'icon', href: '/images/logo2.png' }
-  ],
-  meta: [
-    { name: 'description', content: 'This is the main page' }
-  ]
-}))
-
+useHead(() => ({
+  title: title.value,
+  link: [{ rel: 'icon', href: '/images/logo2.png' }],
+  meta: [{ name: 'description', content: 'This is the main page' }],
+}));
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

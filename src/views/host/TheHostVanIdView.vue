@@ -1,8 +1,11 @@
 <template>
   <div class="my-padding">
     <!-- ссылка назад ко всем фургонам -->
-    <router-link class="text-black underline underline-offset-4 " :to="{ name: 'vans' }">
-      &#8592; Back to all vans 
+    <router-link
+      class="text-black underline underline-offset-4"
+      :to="{ name: 'vans' }"
+    >
+      &#8592; Back to all vans
     </router-link>
 
     <!-- если фургон найден -->
@@ -18,7 +21,8 @@
           <TheButton :type="vansList.type" />
           <h2 class="text-[22px] sm:text-[26px]">{{ vansList.name }}</h2>
           <p>
-            <span class="font-bold">${{ vansList.price }}</span>/day
+            <span class="font-bold">${{ vansList.price }}</span
+            >/day
           </p>
         </div>
       </section>
@@ -42,26 +46,29 @@
     </div>
 
     <!-- если id некорректный -->
-    <div v-else class="bg-white p-[25px] mt-[60px] rounded-md text-red-600 font-bold text-lg">
+    <div
+      v-else
+      class="bg-white p-[25px] mt-[60px] rounded-md text-red-600 font-bold text-lg"
+    >
       🚨 Фургона с таким id ({{ id }}) не существует
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { useCounterStore } from '@/stores/counter'
-import { storeToRefs } from 'pinia'
-import { useRoute } from 'vue-router'
-import TheButton from '@/components/TheButton.vue'
+import { computed } from 'vue';
+import { useCounterStore } from '@/stores/counter';
+import { storeToRefs } from 'pinia';
+import { useRoute } from 'vue-router';
+import TheButton from '@/components/TheButton.vue';
 
-const store = useCounterStore()
-const { data } = storeToRefs(store)
+const store = useCounterStore();
+const { data } = storeToRefs(store);
 
-const route = useRoute()
-const id = computed(() => route.params.id as string)
+const route = useRoute();
+const id = computed(() => route.params.id as string);
 
-const vansList = computed(() => data.value.find(van => van.id === id.value))
+const vansList = computed(() => data.value.find((van) => van.id === id.value));
 </script>
 
 <style scoped>

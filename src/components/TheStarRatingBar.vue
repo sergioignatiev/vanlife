@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import VueECharts from 'vue-echarts'
-import { use } from 'echarts/core'
-import { BarChart } from 'echarts/charts'
-import { GridComponent, TooltipComponent } from 'echarts/components'
-import { CanvasRenderer } from 'echarts/renderers'
+import VueECharts from 'vue-echarts';
+import { use } from 'echarts/core';
+import { BarChart } from 'echarts/charts';
+import { GridComponent, TooltipComponent } from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
 
-use([BarChart, GridComponent, TooltipComponent, CanvasRenderer])
+use([BarChart, GridComponent, TooltipComponent, CanvasRenderer]);
 
 const options = {
   tooltip: { show: false },
@@ -23,9 +23,9 @@ const options = {
       color: '#000',
       fontWeight: 'bold',
       margin: 10,
-      width:'55px',
-      align: 'right'
-    }
+      width: '55px',
+      align: 'right',
+    },
   },
   series: [
     {
@@ -42,13 +42,13 @@ const options = {
       label: {
         show: true,
         position: 'right',
-        formatter: (params: any) => params.dataIndex === 0 ? '100%' : '0%',
+        formatter: (params: any) => (params.dataIndex === 0 ? '100%' : '0%'),
         color: '#000',
-        fontWeight: 'bold'
-      }
-    }
-  ]
-}
+        fontWeight: 'bold',
+      },
+    },
+  ],
+};
 </script>
 
 <template>
