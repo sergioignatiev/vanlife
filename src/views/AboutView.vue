@@ -2,7 +2,18 @@
   
   <div class="flex flex-col gap-[48px]">
     
-    <img :src="aboutIcon" alt="abt">
+    <img 
+    src=" /images/about.png"
+     srcset="
+    /images/modest-explorer.png 480w,
+ /images/about.png 1024w,
+   /images/about.png 1920w
+  "
+      sizes="(max-width: 768px) 100vw, 1920px"
+  alt="abt"
+  loading="lazy"
+  class="w-full h-auto"
+   />
 
     <section class="my-padding flex flex-col gap-[33px]">
       <h1 class="text-[32px] font-bold">Don’t squeeze in a sedan when you could relax in a van.</h1>
@@ -27,7 +38,7 @@
 </template>
 <script lang="ts" setup>
 import { useHead } from '@vueuse/head';
-import aboutIcon from '@/assets/images/about.png'
+
 useHead({
   title: 'About Page',
   link: [

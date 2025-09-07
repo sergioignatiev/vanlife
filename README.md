@@ -1,33 +1,23 @@
-# vanlife
+Демо: [vanlife-theta.vercel.app](https://vanlife-theta.vercel.app/)
 
-This template should help get you started developing with Vue 3 in Vite.
+## Installation
 
-## Recommended IDE Setup
+1. Клонировать репозиторий:
+   git clone https://github.com/sergioignatiev/vanlife.git
+2. Установить зависимости:
+   npm install
+3. Запуск:
+   npm run dev
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Performance
 
-## Type Support for `.vue` Imports in TS
+- **Desktop:** 100% (Google PageSpeed Insights)
+- **Mobile:** 86% (Google PageSpeed Insights)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Оптимизации, которые помогли достичь таких результатов:
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+- Локальное подключение шрифтов Inter (woff2)
+- Адаптивные изображения WebP с srcset
+- Lazy-loading всех изображений
+- Минимальный CSS и JS бандл
+- Минимизация CLS с помощью фиксированных размеров элементов

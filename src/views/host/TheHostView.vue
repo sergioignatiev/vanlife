@@ -23,7 +23,7 @@ import { reactive } from 'vue';
 useHead(()=>({
   title:"Host",
   link: [
-    { rel: 'icon', href: '/images/registration.png' }
+    { rel: 'icon', href: '/images/main.png' }
   ],
   meta: [
     { name: 'description', content: 'This is the host' }
