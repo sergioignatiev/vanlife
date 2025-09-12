@@ -25,7 +25,6 @@ useHead(() => ({
   meta: [{ name: 'description', content: 'This is the host' }],
 }));
 
-
 const hostRoutes = reactive([
   { name: 'dashboard' },
   { name: 'income' },
